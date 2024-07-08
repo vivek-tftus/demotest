@@ -4,11 +4,10 @@ import { sign } from "crypto";
 
 
 test("Applying for insurance in child window", async ({browser})=>{
-
     
-
     const context = await browser.newContext();
     const page = await context.newPage();
+    await page.goto("https://pawsindia.com")
 //Hitting the URL and navigating to child window
         
         await page.locator("//span[normalize-space()='DOG HEALTH INSURANCE']").click()
@@ -20,6 +19,7 @@ test("Applying for insurance in child window", async ({browser})=>{
             InsuranceLink.click(),                //new page is opened 
         
             ])   
+            
             //Filling the details of owner 
         await newPage.locator("[name='firstName']").fill('john')
         await newPage.locator("[name='middleName']").fill('Doe')

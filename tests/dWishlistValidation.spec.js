@@ -10,7 +10,7 @@ test("Adding item to wishlist and validating", async ({page})=>
     //Clicking on wishlist icon and verifying if icon if clicked or not
         const dashboard = new Dashboard(page)
         await dashboard.goTO()
-        await dashboard.FeedbackValidation()
+        await dashboard.ValidFunction()
 
     //Navigating to wishlist box and procedding to checkout
     const wishlist = new Wishlist(page)

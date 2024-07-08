@@ -22,8 +22,8 @@ constructor(page)
     this.freshFood = page.locator("a[href*='/collections/fresh-food-for-dog']")
     //selecting searchitems
     this.searchBox = page.locator("input[type='search']")
-    this.selectingItem = page.locator("a[href*='/search?q=interactive-dog-toys*&type=product']")
-    this.searchValidation = page.locator("//header[@class='page-header']//strong[1]")
+    this.selectingItem = page.locator("//div[@class='header-panel-bt']//li[1]//a[1]")
+    this.searchValidation = page.locator("header[class='page-header'] h2")
     this.searchContains = page.locator('.container .page-header')
     //Newsletter 
     this.fillEmail = page.locator("input[name='contact[email]']")
@@ -75,9 +75,11 @@ async Navigationtodogfood()
 
 async SearchBox()
 {
+    await this.page.waitForTimeout(4000)
     await this.searchBox.nth(1).click()
-    await this.selectingItem.nth(1).click()
-    expect(this.searchValidation).toHaveText('  "interactive-dog-toys*"  ')
+    await this.page.waitForTimeout(4000)
+    await this.selectingItem.click()
+    expect(this.searchValidation.textContent()).toContain("interactive-dog-toys*")
     const textsearch = await this.searchContains.textContent()
     console.log(textsearch)
 }
