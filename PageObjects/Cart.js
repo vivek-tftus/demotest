@@ -8,7 +8,7 @@ constructor(page)
 {
     this.page = page
     this.cartValidation = page.locator("div[class='cart--info'] span")
-    this.checkout = page.locator("div[class='gokwik-checkout']")
+    // this.checkout = page.locator("div[class='gokwik-checkout']")
     
    
 }
