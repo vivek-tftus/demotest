@@ -37,12 +37,13 @@ async ValidatingFilter()
     await this.filter1.nth(0).fill('1000')
     await this.filter2.nth(1).fill('3000')
     await this.applyFilter.click()
-    await this.page.waitForTimeout(4000)
+    
     await this.selectProduct.first().click()
-    await this.page.waitForTimeout(5000)
+    
     await this.selectPack.click()
-    await this.page.waitForTimeout(5000)
+    
     await this.submitButton.click()
+    
     await this.cartMovement.click()
    
 
