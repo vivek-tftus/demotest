@@ -5,7 +5,7 @@ const{Dashboard} = require('../PageObjects/Dashboard')
 const{DogFood} = require('../PageObjects/DogFood')
 const{Cart} = require('../PageObjects/Cart')
 
-test.only("Add item to cart and checkout", async ({page})=>
+test("Add item to cart and checkout", async ({page})=>
     {
 
         //Hovering on menu and navigating to item page
