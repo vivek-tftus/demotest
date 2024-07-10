@@ -4,7 +4,7 @@ import { sign } from "crypto";
 const{switchtab} = require('../PageObjects/switchtab')
 const{newPAGE} = require('../PageObjects/newPage')
 
-test.only("Applying for insurance in child window", async ({page, context})=>
+test("Applying for insurance in child window", async ({page, context})=>
  {
     
     const SWITCHTAB = new switchtab(page)
